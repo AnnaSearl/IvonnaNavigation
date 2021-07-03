@@ -6,6 +6,8 @@
  */
 
 #import "AppDelegate.h"
+#import <IvonnaNavigation/IvonnaNavigation-umbrella.h>
+//#import "IvonnaNavigation-Swift.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -36,6 +38,9 @@ static void InitializeFlipper(UIApplication *application) {
   #ifdef FB_SONARKIT_ENABLED
     InitializeFlipper(application);
   #endif
+
+//  [IvonnaNavigationBridge push:@"aaaa"];
+
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"NavigationExample"

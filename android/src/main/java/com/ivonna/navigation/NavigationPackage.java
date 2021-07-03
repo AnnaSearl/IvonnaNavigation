@@ -1,4 +1,4 @@
-package com.ivonnanavigation;
+package com.ivonna.navigation;
 
 import androidx.annotation.NonNull;
 

@@ -1,7 +1,7 @@
 {
   "name": "@ivonna/navigation",
-  "version": "0.1.0",
-  "description": "ivonna-navigation",
+  "version": "1.0.0",
+  "description": "IvonnaNavigation",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "ivonna-navigation.podspec",
+    "IvonnaNavigation.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -29,20 +29,21 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "commit": "sh shell/commit.sh"
   },
   "keywords": [
     "react-native",
     "ios",
     "android"
   ],
-  "repository": "https://github.com/AnnaSearl/@ivonna/navigation",
+  "repository": "https://github.com/AnnaSearl/IvonnaNavigation",
   "author": "emmm <1029846268@qq.com> (https://github.com/AnnaSearl)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AnnaSearl/@ivonna/navigation/issues"
+    "url": "https://github.com/AnnaSearl/IvonnaNavigation/issues"
   },
-  "homepage": "https://github.com/AnnaSearl/@ivonna/navigation#readme",
+  "homepage": "https://github.com/AnnaSearl/IvonnaNavigation#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

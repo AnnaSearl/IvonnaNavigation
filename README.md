@@ -1,6 +1,6 @@
 # @ivonna/navigation
 
-ivonna-navigation
+IvonnaNavigation
 
 ## Installation
 
@@ -11,7 +11,7 @@ npm install @ivonna/navigation
 ## Usage
 
 ```js
-import Navigation from "@ivonna/navigation";
+import Navigation from '@ivonna/navigation';
 
 // ...
 
