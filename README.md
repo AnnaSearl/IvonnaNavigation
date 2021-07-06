@@ -1,6 +1,6 @@
 # @ivonna/navigation
 
-IvonnaNavigation
+Ivonna 是一套 `Native` 与 `React Native` 的混合开发框架，支持 iOS 与 Android。
 
 ## Installation
 
@@ -11,11 +11,11 @@ npm install @ivonna/navigation
 ## Usage
 
 ```js
-import Navigation from '@ivonna/navigation';
+import { Navigation } from '@ivonna/navigation';
 
 // ...
 
-const result = await Navigation.multiply(3, 7);
+Navigation.push('Home');
 ```
 
 ## Contributing

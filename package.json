@@ -30,7 +30,8 @@
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods",
-    "commit": "sh shell/commit.sh"
+    "commit": "sh shell/commit.sh",
+    "pub": "npm publish --access public"
   },
   "keywords": [
     "react-native",
