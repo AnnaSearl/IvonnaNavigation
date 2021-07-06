@@ -8,7 +8,7 @@
 #import "IvonnaViewController.h"
 #import <React/RCTRootView.h>
 #import <React/RCTBundleURLProvider.h>
-#import "NSObject+ArwenUtils.h"
+#import "NSObject+IvonnaUtils.h"
 
 @interface IvonnaViewController()
 

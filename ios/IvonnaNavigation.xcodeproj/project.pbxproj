@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1D947C6268772D5006B4ED6 /* NSObject+ArwenUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D947C5268772D5006B4ED6 /* NSObject+ArwenUtils.m */; };
+		E127F4C22690975C00918163 /* NSObject+IvonnaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E127F4C02690975C00918163 /* NSObject+IvonnaUtils.m */; };
 		E1D947C726886A9D006B4ED6 /* IvonnaNavigationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* IvonnaNavigationBridge.swift */; };
 		E1D947D026889B26006B4ED6 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D947CF26889B26006B4ED6 /* Test.m */; };
 /* End PBXBuildFile section */
@@ -27,14 +27,14 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libIvonnaNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIvonnaNavigation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5891CC2AC0600A0062D /* IvonnaNavigationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvonnaNavigationBridge.m; sourceTree = "<group>"; };
+		E127F4C02690975C00918163 /* NSObject+IvonnaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IvonnaUtils.m"; sourceTree = "<group>"; };
+		E127F4C12690975C00918163 /* NSObject+IvonnaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IvonnaUtils.h"; sourceTree = "<group>"; };
 		E1D947AE26876013006B4ED6 /* IvonnaContainerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IvonnaContainerManager.h; sourceTree = "<group>"; };
 		E1D947AF26876013006B4ED6 /* IvonnaContainerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IvonnaContainerManager.m; sourceTree = "<group>"; };
 		E1D947B126876022006B4ED6 /* IvonnaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IvonnaViewController.m; sourceTree = "<group>"; };
 		E1D947B226876022006B4ED6 /* IvonnaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IvonnaViewController.h; sourceTree = "<group>"; };
 		E1D947BF2687717C006B4ED6 /* IvonnaApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IvonnaApp.m; sourceTree = "<group>"; };
 		E1D947C02687717C006B4ED6 /* IvonnaApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IvonnaApp.h; sourceTree = "<group>"; };
-		E1D947C4268772D5006B4ED6 /* NSObject+ArwenUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ArwenUtils.h"; sourceTree = "<group>"; };
-		E1D947C5268772D5006B4ED6 /* NSObject+ArwenUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ArwenUtils.m"; sourceTree = "<group>"; };
 		E1D947CE26889B26006B4ED6 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		E1D947CF26889B26006B4ED6 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* IvonnaNavigation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IvonnaNavigation-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 		E1D947C3268772B1006B4ED6 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				E1D947C4268772D5006B4ED6 /* NSObject+ArwenUtils.h */,
-				E1D947C5268772D5006B4ED6 /* NSObject+ArwenUtils.m */,
+				E127F4C12690975C00918163 /* NSObject+IvonnaUtils.h */,
+				E127F4C02690975C00918163 /* NSObject+IvonnaUtils.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -194,8 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D947D026889B26006B4ED6 /* Test.m in Sources */,
+				E127F4C22690975C00918163 /* NSObject+IvonnaUtils.m in Sources */,
 				E1D947C726886A9D006B4ED6 /* IvonnaNavigationBridge.swift in Sources */,
-				E1D947C6268772D5006B4ED6 /* NSObject+ArwenUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,6 +42,7 @@ static IvonnaContainerManager *__manager;
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
     #if DEBUG
+        // return[NSURL URLWithString:@"http://192.168.6.3:8081/index.bundle?platform=ios"];
         return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
     #else
         return [[NSBundle mainBundle] URLForResource:@"bundle/index" withExtension:@"jsbundle"];

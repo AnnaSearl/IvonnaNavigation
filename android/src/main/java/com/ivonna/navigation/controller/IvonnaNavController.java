@@ -16,7 +16,7 @@ import androidx.navigation.fragment.FragmentNavigator;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ivonnanavigation.navigator.IvonnaFragmentNavigator;
+import com.ivonna.navigation.navigator.IvonnaFragmentNavigator;
 
 import static com.facebook.react.bridge.UiThreadUtil.runOnUiThread;
 
@@ -94,5 +94,9 @@ public class IvonnaNavController {
 
   public static IvonnaFragmentNavigator getFragmentNavigator() {
     return sFragmentNavigator;
+  }
+
+  public static Bundle[] getDestinationBundles() {
+    return sDestinationBundles;
   }
 }

@@ -14,3 +14,5 @@ export { default as createContainer } from './CreateContainer';
 export { default as Container } from './Container';
 
 export { default as AppRegistry } from './AppRegistry';
+
+export { default as Stack } from './stack';

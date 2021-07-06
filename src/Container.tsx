@@ -40,7 +40,7 @@ export interface ModuleUseContainer extends StoreManagerProps {
   notifyComponentsToReRender?: (componentid: string | string[]) => void;
 }
 
-function createModuleContainer(container: ContainerProps) {
+function createModuleContainer(container: ContainerProps<any, any>) {
   function useContainer(): {
     store: any;
     setStore: (value: any) => void;

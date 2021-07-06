@@ -2,22 +2,22 @@ import React, { useContext } from 'react';
 
 const EMPTY: unique symbol = Symbol();
 
-export interface ContainerProviderProps {
-  initialState?: any;
+export interface ContainerProviderProps<State = void> {
+  initialState?: State;
   children: React.ReactNode;
 }
 
-export interface ContainerProps {
-  Provider?: any;
-  useContainer?: () => any;
+export interface ContainerProps<Value, State = void> {
+  Provider: React.ComponentType<ContainerProviderProps<State>>;
+  useContainer: () => Value;
 }
 
-const createContainer = (
-  useHook: (initialState?: any) => any
-): ContainerProps => {
-  const Context = React.createContext(EMPTY);
+function createContainer<Value, State = void>(
+  useHook: (initialState?: State) => Value
+): ContainerProps<Value, State> {
+  const Context = React.createContext<Value | typeof EMPTY>(EMPTY);
 
-  function Provider(props: ContainerProviderProps) {
+  function Provider(props: ContainerProviderProps<State>) {
     const { initialState, children } = props;
 
     const value = useHook(initialState);
@@ -25,7 +25,7 @@ const createContainer = (
     return <Context.Provider value={value}>{children}</Context.Provider>;
   }
 
-  function useContainer() {
+  function useContainer(): Value {
     const value = useContext(Context);
     if (value === EMPTY) {
       throw new Error('Component must be wrapped with <Container.Provider>');
@@ -34,6 +34,6 @@ const createContainer = (
   }
 
   return { Provider, useContainer };
-};
+}
 
 export default createContainer;

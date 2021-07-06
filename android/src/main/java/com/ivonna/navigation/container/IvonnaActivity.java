@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
-import com.ivonnanavigation.utils.IvonnaApp;
+import com.ivonna.navigation.manager.IvonnaInstanceManager;
 
 
 public class IvonnaActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
@@ -25,7 +25,7 @@ public class IvonnaActivity extends AppCompatActivity implements DefaultHardware
         super.onCreate(savedInstanceState);
 
         mReactRootView = new ReactRootView(this);
-        mReactInstanceManager = IvonnaApp.getReactInstanceManager();
+        mReactInstanceManager = IvonnaInstanceManager.sharedManager().getReactInstanceManager();
 
         String pageName = getIntent().getStringExtra(EXTRA_PAGE_NAME);
         Bundle pageProperties = getIntent().getBundleExtra(EXTRA_PAGE_PROPERTIES);
@@ -39,16 +39,10 @@ public class IvonnaActivity extends AppCompatActivity implements DefaultHardware
         context.startActivity(intent);
     }
 
-    public static void startMe(Context context, Bundle properties) {
-        Intent intent = new Intent(context, IvonnaActivity.class);
-        intent.putExtra(IvonnaActivity.EXTRA_PAGE_PROPERTIES, properties);
-        context.startActivity(intent);
-    }
-
-    public static void startMe(Context context, String pageName, Bundle extra) {
+    public static void startMe(Context context,String pageName, Bundle properties) {
         Intent intent = new Intent(context, IvonnaActivity.class);
         intent.putExtra(IvonnaActivity.EXTRA_PAGE_NAME, pageName);
-        intent.putExtras(extra);
+        intent.putExtra(IvonnaActivity.EXTRA_PAGE_PROPERTIES, properties);
         context.startActivity(intent);
     }
 

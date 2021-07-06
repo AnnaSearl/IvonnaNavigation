@@ -1,4 +1,4 @@
-package com.ivonnanavigation.navigator;
+package com.ivonna.navigation.navigator;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
-import com.ivonnanavigation.utils.IvonnaApp;
+import com.ivonna.navigation.manager.IvonnaInstanceManager;
 
 public class IvonnaFragment extends Fragment {
 
@@ -35,7 +35,7 @@ public class IvonnaFragment extends Fragment {
     super.onAttach(context);
     mReactRootView = new ReactRootView(context);
     mReactRootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-    mReactInstanceManager = IvonnaApp.getReactInstanceManager();
+    mReactInstanceManager = IvonnaInstanceManager.sharedManager().getReactInstanceManager();
   }
 
   @Override

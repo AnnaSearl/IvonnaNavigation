@@ -1,8 +1,6 @@
-package com.ivonnanavigation.utils;
+package com.ivonna.navigation.constants;
 
 import android.app.Application;
-import androidx.navigation.NavController;
-import androidx.navigation.NavGraph;
 
 import com.facebook.react.ReactInstanceManager;
 
@@ -10,7 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public class IvonnaApp {
   private static Application sApplication;
-  private static ReactInstanceManager sReactInstanceManager;
 
   public static Application getApplication() {
     if (sApplication == null) {
@@ -31,11 +28,4 @@ public class IvonnaApp {
     return sApplication;
   }
 
-  public static ReactInstanceManager getReactInstanceManager() {
-    return sReactInstanceManager;
-  }
-
-  public static void setReactInstanceManager(ReactInstanceManager reactInstanceManager) {
-    sReactInstanceManager = reactInstanceManager;
-  }
 }
