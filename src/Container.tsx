@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StoreManagerProps } from './Store';
 import CreateContainer, { ContainerProps } from './CreateContainer';
 import { Store as StoreManager } from './index';
@@ -41,7 +41,16 @@ export interface ModuleUseContainer extends StoreManagerProps {
 }
 
 function createModuleContainer(container: ContainerProps<any, any>) {
+  // 此变量一定要放在 useContainer 方法的外面，不然 每次 useContainer 方法执行都会创建一个该变量，这样就不是单例了。
+  const initialModuleValueMapping: IvonnaObject = {};
+
+  // type
   function useContainer(): {
+    store: any;
+    setStore: (value: any) => void;
+    notifyComponentsToReRender?: (componentid: string | string[]) => void;
+  };
+  function useContainer(initialValue: any): {
     store: any;
     setStore: (value: any) => void;
     notifyComponentsToReRender?: (componentid: string | string[]) => void;
@@ -52,7 +61,19 @@ function createModuleContainer(container: ContainerProps<any, any>) {
     moduleStore: any;
     setModuleStore: (value: ((state: S) => void) | S) => void;
   };
-  function useContainer(moduleName?: string): ModuleUseContainer {
+  function useContainer<S = any>(
+    moduleName: string,
+    initialValue: any
+  ): {
+    moduleStore: any;
+    setModuleStore: (value: ((state: S) => void) | S) => void;
+  };
+
+  // function
+  function useContainer(
+    moduleName?: string,
+    initialValue?: any
+  ): ModuleUseContainer {
     const {
       getStoreValue,
       setStoreValue,
@@ -61,11 +82,28 @@ function createModuleContainer(container: ContainerProps<any, any>) {
       notifyComponentsToReRender,
     } = container.useContainer?.();
 
+    useEffect(() => {
+      if (!moduleName) {
+        if (!initialModuleValueMapping?.hasOwnProperty('global')) {
+          // 设置初始值
+          initialModuleValueMapping.global = initialValue;
+          setStore(initialValue);
+        }
+      } else {
+        if (!initialModuleValueMapping?.hasOwnProperty(moduleName)) {
+          initialModuleValueMapping[moduleName] = initialValue;
+          setStoreValue?.(moduleName, initialValue);
+        }
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     if (!moduleName) {
       return { store, setStore, notifyComponentsToReRender };
     }
 
     const moduleStore = getStoreValue?.(moduleName);
+
     function setModuleStore(value: any | ((state: IvonnaObject) => void)) {
       setStoreValue?.(moduleName, value);
     }

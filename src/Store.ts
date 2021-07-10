@@ -64,7 +64,9 @@ class Store implements StoreProps {
       this.store = Object.assign({}, this.store, { [name]: state });
       return;
     }
-    this.store = Object.assign({}, this.store, { [name]: value });
+    const prevState = this.getStoreValue(name);
+    const currentState = Object.assign({}, prevState, value);
+    this.store = Object.assign({}, this.store, { [name]: currentState });
   };
 
   private getStoreValue = (name: string) => {
