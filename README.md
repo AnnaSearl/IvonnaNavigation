@@ -44,3 +44,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+## DingTalk group
+
+<img width="320" src="https://smebimage.fuliaoyi.com/FlE5Sr6AX5iVyynjozrVkEeBzVMR">
