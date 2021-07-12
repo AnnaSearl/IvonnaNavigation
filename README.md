@@ -1,6 +1,6 @@
 # @ivonna/navigation
 
-Ivonna 是一套 `Native` 与 `React Native` 的混合开发框架，支持 iOS 与 Android。
+Ivonna is a hybrid development framework of `native` and `react native`, which supports IOS and Android.
 
 ## Installation
 
@@ -10,12 +10,31 @@ npm install @ivonna/navigation
 
 ## Usage
 
-```js
+#### Registry your components
+
+```jsx
+import { AppRegistry } from '@ivonna/navigation';
+
+AppRegistry.registerComponent('Home', HomeComponent);
+AppRegistry.registerComponent('Mine', MineComponent);
+```
+
+#### Navigate to destination
+
+```jsx
 import { Navigation } from '@ivonna/navigation';
 
 // ...
 
 Navigation.push('Home');
+```
+
+#### Using the State Manager
+
+```jsx
+import { Container } from '@ivonna/navigation';
+
+const { moduleStore, setModuleStore } = Container.useContainer('Common'); // `Common` is module name
 ```
 
 ## Contributing
