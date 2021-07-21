@@ -84,6 +84,10 @@ public class IvonnaNavController {
     });
   }
 
+  public static BottomNavigationView getBottomNavigationView() {
+		return sNavView;
+	}
+
   public static NavController getNavController() {
     return sNavController;
   }

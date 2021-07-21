@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -37,13 +38,8 @@ public class IvonnaNavigationBridge extends ReactContextBaseJavaModule {
 		Bundle bundle = new Bundle();
 		if (params != null) {
 			Bundle paramsBundle = new Bundle();
+			paramsBundle = Arguments.toBundle(params);
 			bundle.putBundle("params", paramsBundle);
-			ReadableMapKeySetIterator iter = params.keySetIterator();
-			while (iter.hasNextKey()) {
-				String key = iter.nextKey();
-				String value = params.getString(key);
-				paramsBundle.putString(key, value);
-			}
 		}
 		Activity currentActivity = getCurrentActivity();
 		IvonnaActivity.startMe(currentActivity, name, bundle);
